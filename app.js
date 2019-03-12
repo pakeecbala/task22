@@ -18,8 +18,9 @@ app.get('/info', (req, res) => {
 app.get('/pictures', (req, res) => {
     res.sendFile(path.join(__dirname + '/pictures.html'))
    });
-app.listen(process.env.PORT || 8080)
-
+   
 app.get('/data', (req, res) =>{
     res.json(data);
-    });
+});
+
+app.listen(process.env.PORT || 8080)
