@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <title>welcome to my page</title>
+    </head>
+    <body>
+        <header>
+                <h1>INFO</h1>
+                <button class="button" onclick="window.location.href = '/';">HOME</button>
+                <button class="button" onclick="window.location.href = '/pictures';">PICTURES</button>
+                <button class="button" onclick="window.location.href = '/info';">INFO</button>
+                <button class="button" onclick="window.location.href = '/data';">DATA</button>
+        </header>
+
+        <p id="petsinfo"></p>
+
+                <script>
+                        
+                        fetch('http://localhost:8080/data')
+                            .then(res => res.json())
+                            .then((out) => {
+
+                            document.getElementById("petsinfo").innerHTML = JSON.stringify(out);
+            
+                        }).catch(err => console.error(err));
+
+                </script>
+    </body>
+</html>
