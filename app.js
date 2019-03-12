@@ -8,18 +8,18 @@ var path = require('path');
 const data = require('./pets.json');
 
 app.get('/', (req, res) => {
- res.sendFile(path.join(__dirname + '/hello.html'))
+    res.sendFile(path.join(__dirname + '/index.html'))
 });
 
 app.get('/info', (req, res) => {
     res.sendFile(path.join(__dirname + '/info.html'))
-   });
+});
 
 app.get('/pictures', (req, res) => {
     res.sendFile(path.join(__dirname + '/pictures.html'))
-   });
-   
-app.get('/data', (req, res) =>{
+});
+
+app.get('/data', (req, res) => {
     res.json(data);
 });
 
